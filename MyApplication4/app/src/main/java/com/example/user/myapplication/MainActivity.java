@@ -59,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Next.class);
+                Intent intent = new Intent(MainActivity.this, Next.class);
 
                 Person p = new Person();
                 p.sex = radioSexButton.getText().toString();
                 p.tag = (int) radioSexButton.getTag();
-                intent.putExtra("sex", p);
+                intent.putExtra("sex", p.sex.toString());
 
                 startActivity(intent);
 

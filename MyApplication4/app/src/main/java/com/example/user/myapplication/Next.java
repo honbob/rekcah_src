@@ -20,11 +20,10 @@ public class Next extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.next);
 
-        Intent intent = getIntent();
-        String strSex = intent.getStringExtra("sex");
+        Person p = (Person) getIntent().getSerializableExtra("sex");
 
         TextView tv = (TextView)findViewById(R.id.textView2);
-        tv.setText("Intent 로 받은 값 :" + strSex);
+        tv.setText("Intent 로 받은 값 :" + p.sex + "태그 :" + p.tag);
 
         Button b1 = (Button) findViewById(R.id.button1);
         Button b2 = (Button) findViewById(R.id.button2);
