@@ -61,10 +61,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Next.class);
 
+                intent.putExtra("quest", "1번 항목 체크");
+                intent.putExtra("button", 12345);
+
                 Person p = new Person();
-                p.sex = radioSexButton.getText().toString();
-                p.tag = (int) radioSexButton.getTag();
-                intent.putExtra("sex", p.sex.toString());
+                //p.sex = radioSexButton.getText().toString();
+                //p.tag = (int) radioSexButton.getTag();
+                //intent.putExtra("sex", p.sex.toString());
+
+                p.sex = "성별";
+                p.tag = 2016;
+                intent.putExtra("person", p);
 
                 startActivity(intent);
 
